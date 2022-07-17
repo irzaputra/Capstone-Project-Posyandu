@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 23, 2022 at 06:56 AM
+-- Generation Time: Jul 17, 2022 at 02:29 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 5.6.40
 
@@ -94,9 +94,10 @@ CREATE TABLE `tb_imunisasi` (
 --
 
 INSERT INTO `tb_imunisasi` (`id_imunisasi`, `Imunisasi`, `Keterangan`) VALUES
-(13, 'BCG', 'Imunisasi ini betujuan untuk memberikan kekebalan tubuh terhadap penyakit tubercolocis (TBC).\r\nBila vaksin BCG akan diberikan pada bayi di atas usia 3 bulan, ada baiknya dilakukan dulu uji tuberkulin.'),
-(14, 'Hepatitis B', 'Jarak antara dua imunisasi Hepatitis B minimal 4 minggu. \r\nImunisasi ini untuk mencegah penyakit Hepatitis B'),
-(15, 'Polio', 'diberikan untuk mencegah poliomielitis yang bisa menyebabkan kelumpuhan');
+(13, '-- Not Selected--', '-'),
+(14, 'BCG', 'Imunisasi ini betujuan untuk memberikan kekebalan tubuh terhadap penyakit tubercolocis (TBC).\r\nBila vaksin BCG akan diberikan pada bayi di atas usia 3 bulan, ada baiknya dilakukan dulu uji tuberkulin.'),
+(15, 'Hepatitis B', 'Jarak antara dua imunisasi Hepatitis B minimal 4 minggu.\r\nImunisasi ini untuk mencegah penyakit Hepatitis B'),
+(17, 'Polio', 'diberikan untuk mencegah poliomielitis yang bisa menyebabkan kelumpuhan');
 
 -- --------------------------------------------------------
 
@@ -119,10 +120,10 @@ CREATE TABLE `tb_laporan` (
 --
 
 INSERT INTO `tb_laporan` (`id_laporan`, `idorangtua`, `id_bayi`, `id_imunisasi`, `id_vitamin`, `tgl_periksa`, `keterangan`) VALUES
-(23, 17, 10, 13, 3, '2022-06-15', 'sakit mag'),
-(24, 17, 10, 14, 3, '2022-06-15', 'sakit mag'),
-(25, 16, 4, 13, 3, '2022-06-15', 'dsa'),
-(26, 16, 4, 15, 3, '2022-06-15', 'dsa');
+(27, 16, 4, 14, 6, '2022-06-15', 'dsa'),
+(28, 16, 4, 17, 6, '2022-06-15', 'dsa'),
+(29, 17, 10, 14, 6, '2022-06-15', 'sakit mag'),
+(30, 17, 10, 15, 6, '2022-06-15', 'sakit mag');
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,8 @@ CREATE TABLE `tb_vitamin` (
 --
 
 INSERT INTO `tb_vitamin` (`id_vitamin`, `Jenis_vitamin`, `Keterangan`) VALUES
-(3, 'Vitamin A', 'Mencagah rabun senja,xeroftalmia,kerusakan pada kornea');
+(3, '--Not Selected--', '-'),
+(6, 'Vitamin A', 'Mencagah rabun senja,xeroftalmia,kerusakan pada kornea');
 
 --
 -- Indexes for dumped tables
@@ -240,13 +242,13 @@ ALTER TABLE `tb_balita`
 -- AUTO_INCREMENT for table `tb_imunisasi`
 --
 ALTER TABLE `tb_imunisasi`
-  MODIFY `id_imunisasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_imunisasi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_laporan`
 --
 ALTER TABLE `tb_laporan`
-  MODIFY `id_laporan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_laporan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tb_orangtua`
@@ -258,7 +260,7 @@ ALTER TABLE `tb_orangtua`
 -- AUTO_INCREMENT for table `tb_vitamin`
 --
 ALTER TABLE `tb_vitamin`
-  MODIFY `id_vitamin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_vitamin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
